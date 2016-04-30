@@ -17,8 +17,8 @@ $ npm install --save strip-bom-stream
 ## Usage
 
 ```js
-var fs = require('fs');
-var stripBomStream = require('strip-bom-stream');
+const fs = require('fs');
+const stripBomStream = require('strip-bom-stream');
 
 fs.createReadStream('unicorn.txt')
 	.pipe(stripBomStream())
@@ -30,10 +30,10 @@ It's a [Transform stream](http://nodejs.org/api/stream.html#stream_class_stream_
 
 ## Related
 
-- [strip-bom](https://github.com/sindresorhus/strip-bom) - Strip UTF-8 byte order mark (BOM) from a string/buffer
-- [strip-bom-cli](https://github.com/sindresorhus/strip-bom-cli) - CLI for this module
+- [strip-bom](https://github.com/sindresorhus/strip-bom) - String version of this module
+- [strip-bom-buf](https://github.com/sindresorhus/strip-bom-buf) - Buffer version of this module
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
