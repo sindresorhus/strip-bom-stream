@@ -1,25 +1,14 @@
-'use strict';
-var fs = require('fs');
-var test = require('ava');
-var concat = require('concat-stream');
-var fn = require('./');
+import fs from 'fs';
+import test from 'ava';
+import getStream from 'get-stream';
+import m from '.';
 
-test('main', function (t) {
-	t.plan(1);
-
-	fs.createReadStream('fixture')
-		.pipe(fn())
-		.pipe(concat(function (data) {
-			t.assert(data.toString() === 'Unicorn\n');
-		}));
+test('main', async t => {
+	const ret = await getStream(fs.createReadStream('fixture').pipe(m()));
+	t.is(ret, 'Unicorn\n');
 });
 
-test('low `highWaterMark`', function (t) {
-	t.plan(1);
-
-	fs.createReadStream('fixture', {highWaterMark: 1})
-		.pipe(fn())
-		.pipe(concat(function (data) {
-			t.assert(data.toString() === 'Unicorn\n');
-		}));
+test('low `highWaterMark`', async t => {
+	const ret = await getStream(fs.createReadStream('fixture', {highWaterMark: 1}).pipe(m()));
+	t.is(ret, 'Unicorn\n');
 });

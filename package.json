@@ -10,10 +10,10 @@
     "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "xo && ava"
   },
   "files": [
     "index.js"
@@ -35,10 +35,11 @@
   ],
   "dependencies": {
     "first-chunk-stream": "^2.0.0",
-    "strip-bom": "^2.0.0"
+    "strip-bom-buf": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "0.0.4",
-    "concat-stream": "^1.4.5"
+    "ava": "*",
+    "get-stream": "^3.0.0",
+    "xo": "*"
   }
 }
