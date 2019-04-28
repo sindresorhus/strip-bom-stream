@@ -10,7 +10,7 @@ From Wikipedia:
 ## Install
 
 ```
-$ npm install --save strip-bom-stream
+$ npm install strip-bom-stream
 ```
 
 
