@@ -1,4 +1,4 @@
-import FirstChunkStream from 'first-chunk-stream';
+import FirstChunkStream = require('first-chunk-stream');
 
 declare namespace stripBomStream {
 	type StripBomStream = FirstChunkStream;

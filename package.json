@@ -35,7 +35,7 @@
 		"streams"
 	],
 	"dependencies": {
-		"first-chunk-stream": "^2.0.0",
+		"first-chunk-stream": "^3.0.0",
 		"strip-bom-buf": "^2.0.0"
 	},
 	"devDependencies": {
