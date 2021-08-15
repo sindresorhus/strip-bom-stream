@@ -1,13 +1,6 @@
-'use strict';
-const FirstChunkStream = require('first-chunk-stream');
-const stripBomBuffer = require('strip-bom-buf');
+import FirstChunkStream from 'first-chunk-stream';
+import stripBomBuffer from 'strip-bom-buf';
 
-module.exports = () =>
-	new FirstChunkStream({chunkLength: 3}, (error, chunk, encoding, callback) => {
-		if (error) {
-			callback(error);
-			return;
-		}
-
-		callback(null, stripBomBuffer(chunk));
-	});
+export default function stripBomStream() {
+	return new FirstChunkStream({chunkSize: 3}, (chunk, _encoding) => stripBomBuffer(chunk));
+}

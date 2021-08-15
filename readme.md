@@ -15,8 +15,8 @@ $ npm install strip-bom-stream
 ## Usage
 
 ```js
-const fs = require('fs');
-const stripBomStream = require('strip-bom-stream');
+import fs from 'node:fs';
+import stripBomStream from 'strip-bom-stream';
 
 fs.createReadStream('unicorn.txt')
 	.pipe(stripBomStream())

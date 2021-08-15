@@ -1,9 +1,9 @@
-/// <reference types="node"/>
-import * as fs from 'fs';
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import fs from 'node:fs';
 import {expectType} from 'tsd';
-import stripBomStream = require('.');
+import stripBomStream, {StripBomStream} from './index.js';
 
-expectType<stripBomStream.StripBomStream>(stripBomStream());
+expectType<StripBomStream>(stripBomStream());
 
 fs.createReadStream('unicorn.txt')
 	.pipe(stripBomStream())

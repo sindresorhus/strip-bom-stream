@@ -1,22 +1,18 @@
-import FirstChunkStream = require('first-chunk-stream');
+import FirstChunkStream from 'first-chunk-stream';
 
-declare namespace stripBomStream {
-	type StripBomStream = FirstChunkStream;
-}
+export type StripBomStream = FirstChunkStream;
 
 /**
 Strip UTF-8 [byte order mark](https://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a stream.
 
 @example
 ```
-import * as fs from 'fs';
-import stripBomStream = require('strip-bom-stream');
+import fs from 'node:fs';
+import stripBomStream from 'strip-bom-stream';
 
 fs.createReadStream('unicorn.txt')
 	.pipe(stripBomStream())
 	.pipe(fs.createWriteStream('unicorn.txt'));
 ```
 */
-declare function stripBomStream(): stripBomStream.StripBomStream;
-
-export = stripBomStream;
+export default function stripBomStream(): StripBomStream;
